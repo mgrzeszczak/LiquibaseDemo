@@ -2,6 +2,7 @@ package com.liquibasedemo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "country")
 @Data
+@Audited(withModifiedFlag = true)
 public class Country
 {
     @Id
@@ -16,14 +18,6 @@ public class Country
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "code")
-    private String code;
-
-    @Column(name = "iso_code")
-    private String isoCode;
 
 
     @ManyToOne

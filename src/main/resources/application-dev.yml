@@ -1,35 +1,14 @@
-# Application Properties
 spring:
-  application:
-    name: Liquibase Demo
-  # Jpa Properties
   datasource:
-    #url: jdbc:mysql://localhost:3306/liquibasedemo
-    url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: test
   jpa:
     hibernate:
       ddl-auto: none
-
-  # Liquibase properties
-  devtools:
-    restart:
-      enabled: true
   liquibase:
     contexts: dev
-    change-log: classpath:db/db.changelog-master.xml
-
-## Server Properties
+    change-log: classpath:db/db.changelog-master.yml
 server:
-  port: ${server.port}
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: ["health","info"]
-  endpoint:
-    auditevents:
-      enabled: true
+  port: 8080
 
