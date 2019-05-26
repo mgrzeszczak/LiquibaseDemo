@@ -1,4 +1,4 @@
-# Liquibase auto changelog generation
+# liquibase-changelog-generation-boilerplate
 
 To generate diff changeset based on model changes use:
 ```
